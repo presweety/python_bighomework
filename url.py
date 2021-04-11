@@ -9,7 +9,7 @@ class lunar():
         r = requests.get(url)
         data_str =  r.content.decode("utf-8")
         data_dict = json.loads(data_str)
-        if data_dict["code"] != 200:
-            return {}
+        if data_dict["code"] != 200: #judge the status code
+            return {}    #return the error message
         else:
-            return data_dict
+            return data_dict  #if right, then return the consult result
